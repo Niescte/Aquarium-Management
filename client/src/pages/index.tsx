@@ -72,7 +72,7 @@ export default function Home() {
   // Fetch data from the API
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/data");
+      const response = await fetch("http://localhost:8080/api/data");
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -107,7 +107,7 @@ export default function Home() {
   // Send command to the API
   const sendCommand = async (command: string) => {
     try {
-      const response = await fetch("http://localhost:3000/api/command", {
+      const response = await fetch("http://localhost:8080/api/command", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
