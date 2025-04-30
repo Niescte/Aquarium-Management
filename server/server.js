@@ -20,18 +20,9 @@ let feedSwitch = false; // State for feed
 
 const dataDictionary = {};
 
-class espvals {
-    constructor(temp, light, dist, turb) {
-        this.temp = temp;
-        this.light = light;
-        this.dist = dist;
-        this.turb = turb;
-    }
-}
-
 function addEntry(temp, light, dist, turb) {
     const timestamp = Date.now(); // Get the current timestamp in milliseconds
-    const value = new espvals(temp, light, dist, turb); // Create a new espvals object
+    const value = {temp, light, dist, turb}; // Create a new espvals object
     dataDictionary[timestamp] = value; // Add the object to the dictionary
     console.log(`Data added: ${JSON.stringify(value)} at timestamp ${timestamp}`);
   }
